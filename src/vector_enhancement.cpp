@@ -48,3 +48,12 @@ std::vector<int> operator+(std::vector<int> v1,
                  [](int a, int b) { return a + b; });
   return v1;
 }
+std::ostream &operator<<(std::ostream &out, const std::vector<int>& v) {
+  out << "[ ";
+  if (auto it = v.begin(); it != v.end()) {
+    out << *it;
+    for (const auto& item: v) out << ", " << item;
+  }
+  out << " ]";
+  return out;
+}
