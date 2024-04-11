@@ -8,6 +8,8 @@ include_directories(catch)
 
 # Project files
 file(GLOB project_files
+        catch/*.cpp
+        catch/*.hpp
         ../src/*.h
         ../src/*.cpp
         )
@@ -18,4 +20,5 @@ endforeach()
 
 add_executable(${PROJECT_NAME}
         ${project_files}
-        )
+
+)
