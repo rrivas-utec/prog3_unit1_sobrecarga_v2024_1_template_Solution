@@ -1,6 +1,6 @@
 # Directorios
-SRC_DIR := src
-TEST_DIR := test/catch
+SRC_DIR := ../src
+TEST_DIR := catch
 
 # Compilador
 CXX := g++
