@@ -5,6 +5,7 @@
 #include "catch.hpp"
 #include "vector_enhancement.h"
 #include <vector>
+#include <sstream>
 
 TEST_CASE("Negación de vector", "[neg_vector]") {
   std::vector<int> v1 = {1, 2, 3, 4};
@@ -61,4 +62,19 @@ TEST_CASE("Concatenar vectores", "[con_vector]") {
   std::vector<int> v3 = {1, 2, 3, 4, 5, 6, 7, 8};
   auto v4 = v1 | v2;
   REQUIRE(v3 == v4);
+}
+
+TEST_CASE("Producto de vector con escalar", "[prod_escalar_vector]") {
+  std::vector<int> v1 = {1, 2, 3, 4};
+  std::vector<int> v2 = {10, 20, 30, 40};
+  auto v4 = v1 * 10;
+  REQUIRE(v4 == v2);
+}
+
+
+TEST_CASE("Validando operador <<", "[ostream_vector]") {
+  std::stringstream s{};
+  std::vector<int> v1 = {1, 2, 3, 4};
+  s << v1;
+  REQUIRE(s.str() == "[1, 2, 3, 4]");
 }

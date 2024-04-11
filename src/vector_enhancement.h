@@ -15,8 +15,8 @@ std::vector<int>& operator--(std::vector<int>& v);
 std::vector<int> operator--(std::vector<int>& v, int);
 std::vector<int> operator|(std::vector<int> v1, const std::vector<int>& v2);
 std::vector<int> operator+(std::vector<int> v1, const std::vector<int>& v2);
+std::vector<int> operator*(std::vector<int> v1, int scalar);
 
-std::ostream& operator<<(std::ostream& out, const std::vector<int> v);
-
+std::ostream& operator<<(std::ostream& out, const std::vector<int>& v);
 
 #endif //PROG3_UNIT1_VECTOR_ENHANCEMENT_V2024_1_TEXT_H

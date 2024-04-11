@@ -48,12 +48,18 @@ std::vector<int> operator+(std::vector<int> v1,
                  [](int a, int b) { return a + b; });
   return v1;
 }
+
+std::vector<int> operator*(std::vector<int> v1, int scalar) {
+  std::transform(v1.begin(), v1.end(), v1.begin(),
+                 [scalar](int a) { return a * scalar; });
+  return v1;
+}
+
 std::ostream &operator<<(std::ostream &out, const std::vector<int>& v) {
-  out << "[ ";
+  out << "[";
   if (auto it = v.begin(); it != v.end()) {
-    out << *it;
-    for (const auto& item: v) out << ", " << item;
+    for (out << *it++; it != v.end(); ++it) out << ", " << *it;
   }
-  out << " ]";
+  out << "]";
   return out;
 }
