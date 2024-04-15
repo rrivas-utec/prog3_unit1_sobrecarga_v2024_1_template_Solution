@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(prog3_unit1_sobrecarga_v2024_1)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 include_directories(./src)
 file(GLOB source_files

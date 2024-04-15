@@ -8,18 +8,18 @@
 #include <stdexcept>
 
 std::vector<int> operator-(std::vector<int> v) {
-  std::ranges::for_each(v, [](auto& item) { item *= -1; });
+  for (auto& item: v) item *= -1;
   return v;
 }
 
 std::vector<int> &operator++(std::vector<int> &v) {
-  std::ranges::for_each(v, [](auto& item) { ++item; });
+  for (auto& item: v) ++item;
   return v;
 }
 
 std::vector<int> operator++(std::vector<int> &v, int){
   auto result = v;
-  std::ranges::for_each(v, [](auto& item) { ++item; });
+  for (auto& item: v) ++item;
   return result;
 }
 
